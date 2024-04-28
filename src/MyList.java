@@ -1,19 +1,21 @@
-public interface MyList<T> extends Iterable {
-    void add(T item);
-    void set(int index, T item);
-    void add(int index, T item);
-    void addFirst(T item);
+import java.util.Comparator;
+import java.util.Iterator;
+public interface MyList<T> extends Iterable<T>{
+    void add(T element, int index);
+    void set(T element, int index);
+    void addFirst(T element);
+    void addLast(T element);
     T get(int index);
     T getFirst();
     T getLast();
-    void remove(int index);
-    void removeFirst();
-    void removeLast();
-    void sort();
-    int indexOf(Object object);
-    int lastIndexOf(Object object);
+    T remove(int index);
+    T removeFirst();
+    T removeLast();
+    void sort(Comparator<T> cmp);
+    int indexOf(Object o);
     boolean exists(Object object);
     public Object[] toArray();
     void clear();
     int size();
+
 }
